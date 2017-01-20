@@ -20,7 +20,6 @@
 		03D08A681E2F69C900B699E8 /* StudentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 03D08A671E2F69C900B699E8 /* StudentVC.m */; };
 		03E8C2A51E31A6FA0022BBDE /* StudentListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E8C2A41E31A6FA0022BBDE /* StudentListVC.m */; };
 		03E8C2A81E31D4A10022BBDE /* TeacherVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E8C2A71E31D4A10022BBDE /* TeacherVC.m */; };
-		03E8C2D11E31FC090022BBDE /* CoreDataHelper1.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E8C2D01E31FC090022BBDE /* CoreDataHelper1.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,8 +46,6 @@
 		03E8C2A41E31A6FA0022BBDE /* StudentListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentListVC.m; sourceTree = "<group>"; };
 		03E8C2A61E31D4A10022BBDE /* TeacherVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherVC.h; sourceTree = "<group>"; };
 		03E8C2A71E31D4A10022BBDE /* TeacherVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherVC.m; sourceTree = "<group>"; };
-		03E8C2CF1E31FC090022BBDE /* CoreDataHelper1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper1.h; sourceTree = "<group>"; };
-		03E8C2D01E31FC090022BBDE /* CoreDataHelper1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper1.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,8 +116,6 @@
 			children = (
 				033FEC401E2EFB0600BE7F9F /* CoreDataHelper.h */,
 				033FEC411E2EFB0600BE7F9F /* CoreDataHelper.m */,
-				03E8C2CF1E31FC090022BBDE /* CoreDataHelper1.h */,
-				03E8C2D01E31FC090022BBDE /* CoreDataHelper1.m */,
 			);
 			path = CoreDataHelper;
 			sourceTree = "<group>";
@@ -198,7 +193,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				033FEC301E2EFADD00BE7F9F /* ViewController.m in Sources */,
-				03E8C2D11E31FC090022BBDE /* CoreDataHelper1.m in Sources */,
 				033FEC2D1E2EFADD00BE7F9F /* AppDelegate.m in Sources */,
 				033FEC421E2EFB0600BE7F9F /* CoreDataHelper.m in Sources */,
 				03E8C2A81E31D4A10022BBDE /* TeacherVC.m in Sources */,

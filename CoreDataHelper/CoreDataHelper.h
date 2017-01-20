@@ -13,13 +13,14 @@
 
 @property (readonly, strong) NSPersistentContainer *persistentContainer;
 
+/**
+ CoreData文件名。
+ */
 @property (nonatomic ,copy)NSString *objectModelName;
 + (instancetype)sharedInstance;
 + (NSManagedObjectContext *) getManagedObjectContext;
 + (void)setMangedObjectName:(NSString *)name;
-
 - (void)saveContext;
-- (NSURL *)applicationDocumentsDirectory;
 
 //add:
 

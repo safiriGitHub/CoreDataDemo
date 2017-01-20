@@ -11,7 +11,6 @@
 #import "Student+CoreDataClass.h"
 #import "Student+CoreDataProperties.h"
 #import "Book+CoreDataClass.h"
-#import "CoreDataHelper1.h"
 
 @interface StudentVC ()
 @property (weak, nonatomic) IBOutlet UITextField *nameText;
