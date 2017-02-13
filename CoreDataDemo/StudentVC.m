@@ -11,7 +11,7 @@
 #import "Student+CoreDataClass.h"
 #import "Student+CoreDataProperties.h"
 #import "Book+CoreDataClass.h"
-
+#import "Classee+CoreDataProperties.h"
 @interface StudentVC ()
 @property (weak, nonatomic) IBOutlet UITextField *nameText;
 @property (weak, nonatomic) IBOutlet UILabel *hintLabel;
@@ -37,6 +37,7 @@
         book.name = @"三体";
         student.book = book;
         
+        
         NSError *error = nil;
         BOOL success = [self.context save:&error];
         if (success) {
@@ -47,6 +48,16 @@
         }
     }
     
+    Classee *class = [NSEntityDescription insertNewObjectForEntityForName:@"Classee" inManagedObjectContext:self.context];
+    class.name = @"efe";
+    __autoreleasing NSError *error = nil;
+    [self.context save:&error];
+    if (error) {
+        [NSException raise:@"" format:@"%@", [error localizedDescription]];
+    }
+    
+   
+
 }
 - (void)readData{
     // 初始化一个查询请求
@@ -68,8 +79,10 @@
         Student *stu = [students lastObject];
         self.hintLabel.text = [NSString stringWithFormat:@"添加了一个学生，名字是%@,id是%zd",stu.name,stu.idNum];
     }
+    
 }
 - (IBAction)searchStudent:(id)sender {
+    
     if (self.nameText.text.length > 0) {
         NSFetchRequest *request = [Student fetchRequest];
         // 设置条件过滤(搜索name中包含字符串"zhang"的记录，注意：设置条件过滤时，数据库SQL语句中的%要用*来代替，所以%Itcast-1%应该写成*zhang*)
@@ -94,7 +107,18 @@
         }
     }
 }
-
+- (void)searchStudentFromFetchRequestTemplate{
+    NSManagedObjectModel *mom = [CoreDataHelper getManagedObjectModel];
+    NSFetchRequest *req1 = [mom fetchRequestTemplateForName:@"Name"];
+    NSError *error = nil;
+    NSArray *students = [self.context executeFetchRequest:req1 error:&error];
+    if (error) {
+        [NSException raise:@"查询错误" format:@"%@", [error localizedDescription]];
+    }else{
+        Student *stu = [students lastObject];
+        self.hintLabel.text = [NSString stringWithFormat:@"找到了最后一个学生，名字是%@,id是%zd",stu.name,stu.idNum];
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

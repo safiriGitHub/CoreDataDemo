@@ -19,6 +19,7 @@
 @property (nonatomic ,copy)NSString *objectModelName;
 + (instancetype)sharedInstance;
 + (NSManagedObjectContext *) getManagedObjectContext;
++ (NSManagedObjectModel *) getManagedObjectModel;
 + (void)setMangedObjectName:(NSString *)name;
 - (void)saveContext;
 

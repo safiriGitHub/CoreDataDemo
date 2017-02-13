@@ -2,7 +2,12 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16C67" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="Book" representedClassName="Book" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="new1" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="student" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="book" inverseEntity="Student" syncable="YES"/>
+    </entity>
+    <entity name="Classee" representedClassName="Classee" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="newRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Teacher" inverseName="newRelationship" inverseEntity="Teacher" syncable="YES"/>
     </entity>
     <entity name="Student" representedClassName="Student" syncable="YES" codeGenerationType="class">
         <attribute name="idNum" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
@@ -13,10 +18,13 @@
     <entity name="Teacher" representedClassName="Teacher" syncable="YES">
         <attribute name="idNum" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="newRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Classee" inverseName="newRelationship" inverseEntity="Classee" syncable="YES"/>
     </entity>
+    <fetchRequest name="Name" entity="Student" predicateString="name CONTAINS &quot;zhang&quot;"/>
     <elements>
-        <element name="Book" positionX="-27" positionY="27" width="128" height="75"/>
-        <element name="Student" positionX="-63" positionY="-18" width="128" height="105"/>
-        <element name="Teacher" positionX="-54" positionY="0" width="128" height="75"/>
+        <element name="Book" positionX="-27" positionY="27" width="128" height="90"/>
+        <element name="Student" positionX="-65" positionY="-108" width="128" height="105"/>
+        <element name="Teacher" positionX="-252" positionY="-81" width="128" height="88"/>
+        <element name="Classee" positionX="-234" positionY="57" width="128" height="58"/>
     </elements>
 </model>

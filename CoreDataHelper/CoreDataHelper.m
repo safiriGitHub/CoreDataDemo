@@ -35,6 +35,20 @@ static CoreDataHelper *_instance;
 + (NSManagedObjectContext *) getManagedObjectContext{
     return [CoreDataHelper sharedInstance].persistentContainer.viewContext;
 }
++ (NSManagedObjectModel *) getManagedObjectModel{
+    NSString *modelName = [CoreDataHelper sharedInstance].objectModelName;
+    if (modelName) {
+        //获取模型路径
+        NSURL *modeUrl = [[NSBundle mainBundle] URLForResource:modelName withExtension:@"momd"];
+        //根据模型文件创建模型对象
+        NSManagedObjectModel *model = [[NSManagedObjectModel alloc] initWithContentsOfURL:modeUrl];
+        return model;
+    }else{
+        // 2.从应用程序包中加载.xcdatamodeld模型文件
+        NSManagedObjectModel *model = [NSManagedObjectModel mergedModelFromBundles:nil];
+        return model;
+    }
+}
 + (void)setMangedObjectName:(NSString *)name{
     [[CoreDataHelper sharedInstance] setObjectModelName:name];
 }
